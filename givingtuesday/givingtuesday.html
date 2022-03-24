@@ -94,7 +94,7 @@
             }
 
             .letter-text{
-                font-size: 18px;
+                font-size: 13.5px;
             }
 
             .link-button{
@@ -333,10 +333,18 @@
         </script>
         
     </head>
-    <body>
-        
+    <body onload="updateProgressBar()">
+        <div id = "top-progressbar-wrapper" class = "full-width">
+            <div id =  "progressbar-background">
+                <div id = "progressbar-bar">
+                    <span id = "progressbar-amount" class = "header-text">$0</span>
+                </div>
+            </div>
+            <span id = "progressbar-goal" class = "header-text">$15,000</span>
+        </div>
+
         <div id = "content-wrapper" class = "full-width">
-            <h2 id = "content-header" class = "header-text">Support The Daily Orange</h2>
+            <h2 id = "content-header" class = "header-text">Support The Daily Orange on Giving Tuesday</h2>
             <div id = "left-content-wrapper" class = "twothirds-width">
                 <div id = "content-video-wrapper">
                     <div id = "content-video-main">
@@ -345,12 +353,25 @@
                         </video>
                     </div>
                     <br/>
+                    <div id = "carousel-video-controls">
+                        <a href = "#" class = "link-button control-button" id = "carousel-controls-left" onclick="moveCarousel(-1)"><</a>
+                        <a href = "#" class = "link-button control-button" id = "carousel-controls-right" onclick="moveCarousel(1)">></a>
+                        <br/><br/>
+                    </div>
+                    <div id = "content-video-options">
+                        <a onClick = "switchVideoModes()" id = "video-options-button" class = "link-button header-text" href = "#">Hear From More Staffers!</a>
+                    </div>
                 </div>
             </div>
             <div id = "right-content-wrapper" class = "onethird-width">
-                <p class = "letter-text body-text">The Daily Orange is Syracuse's only nonprofit newsroom that delivers essential coverage at no cost to its readers. But more than that, it's run by students who work tirelessly to produce award-winning projects that inspire change. The Daily Orange is consistently recognized as the best student newspaper in the country for a reason.</p>
-                <p class = "letter-text body-text">Our student journalists break national news and speak truth to power. We've covered the Syracuse community for 118 years.</p>
-                <p class = "letter-text body-text">Unlike other campus media outlets, we don't receive a cent from Syracuse University. Our financial independence is by choice. We rely on supporters like you so we can cover the university fiercely and fairly. That's why your donation means so much to us. You can help The D.O. keep doing what it does best by supporting our mission of producing top-notch local journalism and creating unparalleled opportunities for students.</p>
+                <p class = "letter-text body-text">This December, The Daily Orange needs your support.</p>
+                <p class = "letter-text body-text">To keep our award-winning coverage accessible and relevant for all, we're seeking to raise $15,000. Every gift brings us one step closer.</p>
+                <p class = "letter-text body-text">The D.O. prides itself on its independence. We don't take any money from Syracuse University, and that's by choice.</p>
+                <p class = "letter-text body-text">We're committed to remaining a free news resource for central New York. We also firmly believe our young journalists should be paid for their work. And we're proud to be the only student-run news outlet in Syracuse that pays its staff.</p>
+                <p class = "letter-text body-text">You can help us continue to do so. Every dollar donated this December will go directly toward funding staff salaries in 2022. </p>
+                <p class = "letter-text body-text">It's our goal to be more representative of our community, and that starts with paying students. </p>
+                <p class = "letter-text body-text">Working at The D.O. is an experience all students should have access to, not just those who can afford to volunteer their time. By paying students, we can lead the way toward a more equitable and inclusive industry. Students who are fairly compensated will have the time and freedom to produce more impactful work. </p>
+                <p class = "letter-text body-text">By donating today, you'll help to ensure a brighter future in journalism, and a brighter future for the best student-run news organization in the country.</p>
                 <p class = "letter-text body-text">
                     Thank you for supporting the next generation,<br/>
                     Emily Steinberger, editor-in-chief 2021-22<br/>
@@ -363,7 +384,7 @@
         </div>
         <div id="modal-wrapper" onclick="hideDonationModal()">
             <div id = "modal-content">
-                <script src="https://donorbox.org/widget.js" paypalExpress="false"></script><iframe src="https://donorbox.org/embed/donate-to-the-daily-orange?default_interval=o&hide_donation_meter=true" name="donorbox" allowpaymentrequest="allowpaymentrequest" seamless="seamless" frameborder="0" scrolling="no" height="1000px" width="100%" style="max-width: 500px; min-width: 250px; max-height:none!important"></iframe>
+                <script src="https://donorbox.org/widget.js" paypalExpress="false "></script><iframe src="https://donorbox.org/embed/december-2021-giving-campaign?default_interval=o&hide_donation_meter=true" name="donorbox" allowpaymentrequest="allowpaymentrequest" seamless="seamless" frameborder="0" scrolling="no" height="1000px" width="100%" style="max-width: 500px; min-width: 250px; max-height:none!important"></iframe>
                 <br/>
                 <a href = "#" id = "modal-close-button" onclick = "hideDonationModal()">X</a> 
             </div>
