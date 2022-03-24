@@ -1,0 +1,188 @@
+ 2014-2015 Recruits
+          <div id="canvas-holder" class="center-me">
+              <canvas id="chart-area" class="center-me" width="150" height="150" />
+          </div>
+          <div id="chartjs-tooltip"></div>
+          <ul class="chart-outline">
+            <li class="light-gray">3 STAR RECRUITS</li>
+            <li class="yellow">4 STAR RECRUITS</li>
+            <li class="gray">LESS THAN 3 STARS</li>
+          </ul>
+
+          SHAFER'S RECORD
+          <div id="canvas-holder" class="center-me">
+              <canvas id="chart-record" class="center-me" width="150" height="150" />
+          </div>
+          <div id="chartjs-tooltip"></div>
+          <ul class="chart-outline">
+            <li class="yellow">WINS</li>
+            <li class="gray">LOSES</li>
+          </ul>
+
+          AVE. YARD PER RUSH
+          <div id="canvas-holder" class="center-me">
+              <canvas id="chart-aypr" class="chart-centerme" width="320" height="300" />
+          </div>
+          <div id="chartjs-tooltip"></div>
+
+<!-- 
+          <div id="circle_wrap">
+            <div id="circle">
+
+              <h2 data-sr='enter top move 100px opacity 0 wait 2.6s'>2015</h2>
+              
+              <div class="square" data-sr='enter top move 100px opacity 0 wait 2.5s'></div>
+              <div class="square" data-sr='enter top move 100px opacity 0 wait 2.4s'></div>
+              <div class="square" data-sr='enter top move 100px opacity 0 wait 2.3s'></div>
+              <div class="square" data-sr='enter top move 100px opacity 0 wait 2.2s'></div>
+              <div class="square" data-sr='enter top move 100px opacity 0 wait 2.1s'></div>
+              <div class="square" data-sr='enter top move 100px opacity 0 wait 2.0s'></div>
+              <div class="square" data-sr='enter top move 100px opacity 0 wait 1.9s'></div>
+              <div class="square" data-sr='enter top move 100px opacity 0 wait 1.7s'></div>
+              <div class="square" data-sr='enter top move 100px opacity 0 wait 1.6s'></div>
+              <div class="square" data-sr='enter top move 100px opacity 0 wait 1.5s'></div>
+              <div class="square" data-sr='enter top move 100px opacity 0 wait 1.4s'></div>
+              <div class="square" data-sr='enter top move 100px opacity 0 wait 1.3s'></div>
+              <div class="square" data-sr='enter top move 100px opacity 0 wait 1.2s'></div>
+              <div class="square" data-sr='enter top move 100px opacity 0 wait 1.1s'></div>
+              <div class="square" data-sr='enter top move 100px opacity 0 wait 1.0s'></div>
+              <div class="square" data-sr='enter top move 100px opacity 0 wait 0.9s'></div>
+              <div class="square" data-sr='enter top move 100px opacity 0 wait 0.8s'></div>
+              <div class="square" data-sr='enter top move 100px opacity 0 wait 0.7s'></div>
+              <div class="square" data-sr='enter top move 100px opacity 0 wait 0.6s'></div>
+              <div class="square" data-sr='enter top move 100px opacity 0 wait 0.5s'></div>
+              <div class="square" data-sr='enter top move 100px opacity 0 wait 0.4s'></div>
+              <div class="square" data-sr='enter top move 100px opacity 0 wait 0.3s'></div>
+              <div class="square" data-sr='enter top move 100px opacity 0 wait 0.2s'></div>
+              <div class="square" data-sr='enter top move 100px opacity 0 wait 0.1s'></div>
+            </div>
+          </div>
+ -->
+
+
+
+
+<script src="/wp-content/special/2-3-zone/script.js?wed" type="text/javascript"></script>
+<script>
+
+  var pieData = [
+  {
+    value: "34",
+    color:"#939598",
+    highlight: "#C5C8CC",
+    label: "3 Star Recruits"
+  },
+  {
+    value: "2",
+    color: "#404041",
+    highlight: "#ADAFB2",
+    label: "4 Star Recruits"
+  },
+  {
+    value: "17",
+    color: "#fff200",
+    highlight: "#FFF266",
+    label: "Less Than 3 Stars"
+  }
+
+  ];
+
+  var recordData = [
+    {
+      value: "10",
+      color: "#fff200",
+      highlight: "#FFF266",
+      label: "WINS"
+    },
+    {
+      value: "15",
+      color:"#939598",
+      highlight: "#C5C8CC",
+      label: "LOSES"
+    }
+  ];
+
+  var dataHunt = {
+    labels: ["2013", "2014"],
+    datasets: [
+        {
+          label: "AVG. YARD PER RUSH",
+          fillColor: "rgba(35,31,32,1)",
+          strokeColor: "rgba(35,31,32,0.8)",
+          highlightFill: "rgba(35,31,32,0.75)",
+          highlightStroke: "rgba(35,31,32,.8)",
+          data: [4.7, 5.6]
+        }, 
+        {
+          label: "AVG. YARD PER PASS",
+          fillColor: "rgba(255,242,0,1)",
+          strokeColor: "rgba(255,242,0,0.8)",
+          highlightFill: "rgba(255,242,0,0.75)",
+          highlightStroke: "rgba(255,242,0,.8)",
+          data: [6, 6.8]
+        }
+    ]
+  };
+
+
+    window.onload = function() {
+
+    var ctx1 = document.getElementById("chart-area").getContext("2d");
+    window.myPie = new Chart(ctx1).Doughnut(pieData);
+
+    var record = document.getElementById("chart-record").getContext("2d");
+    window.myPie = new Chart(record).Doughnut(recordData);
+
+    var ctx2 = document.getElementById("chart-aypr").getContext("2d");
+    window.myBar = new Chart(ctx2).Bar(dataHunt, {
+    barValueSpacing: 20, barDatasetSpacing: 5, scaleShowGridLines: false
+    });
+
+    // var passChart = document.getElementById("chart-aypp").getContext("2d");
+    // window.myBar = new Chart(passChart).Bar(dataAvgYardsPerPass, {
+    // barValueSpacing: 20, barDatasetSpacing: 20, scaleShowGridLines: false
+    // });
+
+
+    // var ctx3 = document.getElementById("chart-aypp").getContext("2d");
+    // window.myBar2 = new Chart(ctx3).Bar(dataAvgYardsPerRush, options);
+
+    // var myDoughnutChart = new Chart(ctx[1]).Doughnut(data,options);
+    // window.myPie = new Chart(myDoughnutChart).Pie(pieData);
+
+
+    };
+    </script>
+
+    <script src='dist/scrollReveal.min.js'></script>
+    <script>
+
+      window.sr = new scrollReveal();
+
+    </script>
+    <style type="text/css">
+   
+    #circle_wrap {
+      position: relative;
+      width: 175px;
+      float: left;
+      height: 700px;
+      margin: 0 10px;
+    }
+
+    #circle {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    .square {
+      content: '';
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+      background-color: orange;
+    }
+    </style>
+
