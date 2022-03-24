@@ -1,0 +1,372 @@
+<html>
+    <head>
+        <title>Give to The Daily Orange</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@dailyorange" />
+        <meta name="twitter:title" content="Give to The Daily Orange" />
+        <meta name="twitter:description" content="To keep our award-winning coverage accessible and relevant for all, we're seeking to raise $15,000. Every gift brings us one step closer." />
+        <meta name="twitter:image" content="https://donate.dailyorange.com/card.jpg" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Give to The Daily Orange" />
+        <meta property="og:description" content="To keep our award-winning coverage accessible and relevant for all, we're seeking to raise $15,000. Every gift brings us one step closer." />
+        <meta property="og:url" content="https://donate.dailyorange.com" />
+        <meta property="og:image" content="https://donate.dailyorange.com/card.jpg" />
+
+        <style>
+            .full-width{
+                width: 90vw;
+            }
+            .onethird-width{
+                width: 40vw;
+            }
+            .twothirds-width{
+                width: 50vw;
+            }
+
+            .header-text{
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-weight: bold;
+            }
+            .body-text{
+                font-family: Tahoma;
+            }
+
+            #top-progressbar-wrapper{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: left;
+                align-items: left;
+                font-size: 30px;
+                margin-left: 5vw;
+                height: 5vh;
+            }
+            #progressbar-background {
+                width: 60vw;
+                background-color: lightgray;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+            }
+
+            #progressbar-bar {
+                width: 0%;
+                height: 40px;
+                line-height: 40px;
+                background-color: #F76900;
+                text-align: center;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+                border-bottom-right-radius: 15px;
+                -webkit-transition: width 1s ease-in-out;
+                -moz-transition: width 1s ease-in-out;
+                -o-transition: width 1s ease-in-out;
+                transition: width 1s ease-in-out;
+            }
+            #progressbar-goal{
+                padding-left: 10px;
+                line-height: 40px;
+            }
+            
+            #content-wrapper{
+                text-align: center;
+            }
+            #left-content-wrapper{
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                float: left;
+
+            }
+            #right-content-wrapper{
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                float:left;
+
+            }
+            #content-video-wrapper{
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+
+            .letter-text{
+                font-size: 18px;
+            }
+
+            .link-button{
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                padding: 15px 35px;
+                text-align: center;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+            }
+            .control-button{
+                background-color: darkgray;
+                color: #000;
+                padding: 10px 25px;
+                font-size: 32px;
+                line-height: 32px;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            #video-options-button{
+                background-color: darkgray;
+                color: #000;
+                align-self: right;
+            }
+            #video-embed{
+                height: 315px;
+                width: 560px; 
+            }
+            #carousel-video-controls{
+                display: none;
+            }
+
+            #donation-button{
+                background: #F76900;
+                color: #fff;
+                box-shadow: 4px 4px 4px 4px lightgray;
+            }
+
+            #float-donateembed {
+                position: fixed;
+                top: 10px;
+                right: 30px;
+            }
+
+            #modal-wrapper {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+            #modal-close-button{
+                border-radius: 50%;
+                width: 36px;
+                height: 36px;
+                padding: 8px;
+                text-decoration: none;
+                font-size: 36px;
+                line-height: 36px;
+                color: #000;
+                background-color: #fff;
+                font-family: Arial, Helvetica, sans-serif;
+                position: fixed;
+                top: 20px;
+                right: 20px;
+            }
+
+            /*Mobile*/
+            @media only screen and (max-width: 768px) {
+                .onethird-width{
+                width: 90vw;
+                }
+                .twothirds-width{
+                    width: 90vw;
+                } 
+                #left-content-wrapper{
+                    float: none;
+                    display: block;
+                }
+                #right-content-wrapper {
+                    float: none;
+                    display: block;
+                    padding-bottom: 10vh; 
+                }
+                #content-wrapper{
+                    justify-content: center;
+                    justify-items: center;
+                    align-items: center;
+                    align-content: center;
+                    align-self: center;
+                }
+                #video-embed{
+                    width: 300px !important;
+                    height: 170px !important;
+                }
+                #float-donateembed{
+                    position: fixed;
+                    bottom: 5vh !important; 
+                    top: revert !important;
+                }
+                .letter-text{
+                    font-size: 20px;
+                }
+                #progressbar-amount{
+                    font-size: 21px;
+                }
+                #progressbar-goal{
+                    font-size: 21px;
+                }
+                #modal-close-button{
+                    bottom: 20px !important;
+                    top: revert !important;
+                }
+            }
+
+        </style>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-1FML1ETD7T"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-1FML1ETD7T');
+        </script>
+        <script>
+            // control the progress bar
+            function updateProgressBar() {
+                // get elements
+                var bar = document.getElementById("progressbar-bar");
+                var amountLabel = document.getElementById("progressbar-amount");
+                var goalLabel = document.getElementById("progressbar-goal");
+                var goal = 15000;
+                // fetch from API
+                fetch('https://donate.dailyorange.com/raised')
+                .then(response => response.json())
+                .then(data => {
+                    //We have the response, so set the div values
+                    //console.log(data)
+                    amountLabel.innerHTML = "$" + numberWithCommas(Math.round(data));
+                    bar.style.width = (data/goal)*100+'%'
+                });
+                goalLabel.innerHTML = "$" + numberWithCommas(goal);
+            }
+            // add commas to numbers
+            function numberWithCommas(x) {
+                return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+
+            // video
+            // switch video modes (main to more and back)
+            var videoModeMain = true;
+            function switchVideoModes(){
+                var video = document.getElementById("video-embed");
+                var source = document.getElementById("video-embed-source");
+                var button = document.getElementById("video-options-button");
+                var controls = document.getElementById("carousel-video-controls");
+                if (videoModeMain){
+                    // switch to sub video carousel (start with start for now)
+                    source.setAttribute('src', 'video-1.mp4');
+                    video.load();
+                    video.play();
+                    video.setAttribute("poster", "");
+                    // we are gonna move the carousel but not actually so the controls load right
+                    moveCarousel(0);
+                    button.innerHTML = "Hear From The Full Staff!";
+                    controls.style.display = "block";
+                } else{
+                    // go back to main video
+                    source.setAttribute("src", "video-0.mp4");
+                    video.load();
+                    video.play();
+                    button.innerHTML = "Hear From More Staffers!";
+                    controls.style.display = "none";
+                }
+                videoModeMain = !videoModeMain;
+            }
+            // move the carousel
+            var carouselSpot = 1; // start
+            var carouselSize = 4;
+            function moveCarousel(direction) { // either -1 (left) or 1 (right) or 0 (only on load)
+                // do precheck (should never happen bc the buttons will be hidden)
+                if ((carouselSpot <= 1 && direction == -1) || (carouselSpot >= carouselSize && direction == 1)){
+                    return;
+                }
+
+                // now that we are good do the move
+                carouselSpot = carouselSpot + direction;
+
+                // update accordingly 
+                // get items
+                var leftButton = document.getElementById("carousel-controls-left");
+                var rightButton = document.getElementById("carousel-controls-right");
+                var video = document.getElementById("video-embed");
+                var source = document.getElementById("video-embed-source");
+                
+                // update video
+                source.setAttribute("src", "video-" + carouselSpot + ".mp4");
+                video.load();
+                video.play();
+
+                // hide buttons if needed
+                // first hide them
+                leftButton.style.display = "none";
+                rightButton.style.display = "none";
+                if (carouselSpot != 1){
+                leftButton.style.display = "inline";
+                }
+                if(carouselSpot != carouselSize){
+                    rightButton.style.display = "inline";
+                }
+            }
+
+            // modal
+            var modalWrapper = document.getElementById("modal-wrapper");
+            function showDonationModal(){
+                // show modal on click
+                var modalWrapper = document.getElementById("modal-wrapper");
+                modalWrapper.style.display = "block";
+            }
+            function hideDonationModal(){
+                // hide modal on click
+                var modalWrapper = document.getElementById("modal-wrapper");
+                modalWrapper.style.display = "none";
+            }
+        </script>
+        
+    </head>
+    <body>
+        
+        <div id = "content-wrapper" class = "full-width">
+            <h2 id = "content-header" class = "header-text">Support The Daily Orange</h2>
+            <div id = "left-content-wrapper" class = "twothirds-width">
+                <div id = "content-video-wrapper">
+                    <div id = "content-video-main">
+                        <video controls id = "video-embed" poster = "video-0-p.jpg">
+                            <source src="video-0.mp4" type="video/mp4" id = "video-embed-source">
+                        </video>
+                    </div>
+                    <br/>
+                </div>
+            </div>
+            <div id = "right-content-wrapper" class = "onethird-width">
+                <p class = "letter-text body-text">The Daily Orange is Syracuse's only nonprofit newsroom that delivers essential coverage at no cost to its readers. But more than that, it's run by students who work tirelessly to produce award-winning projects that inspire change. The Daily Orange is consistently recognized as the best student newspaper in the country for a reason.</p>
+                <p class = "letter-text body-text">Our student journalists break national news and speak truth to power. We've covered the Syracuse community for 118 years.</p>
+                <p class = "letter-text body-text">Unlike other campus media outlets, we don't receive a cent from Syracuse University. Our financial independence is by choice. We rely on supporters like you so we can cover the university fiercely and fairly. That's why your donation means so much to us. You can help The D.O. keep doing what it does best by supporting our mission of producing top-notch local journalism and creating unparalleled opportunities for students.</p>
+                <p class = "letter-text body-text">
+                    Thank you for supporting the next generation,<br/>
+                    Emily Steinberger, editor-in-chief 2021-22<br/>
+                    Mira Berenbaum, fundraising coordinator 2021-22
+                </p>
+            </div>
+        </div>
+        <div id = "float-donateembed">
+            <a id = "donation-button" class="link-button header-text" href="#" onclick="showDonationModal()">Donate Now!</a>
+        </div>
+        <div id="modal-wrapper" onclick="hideDonationModal()">
+            <div id = "modal-content">
+                <script src="https://donorbox.org/widget.js" paypalExpress="false"></script><iframe src="https://donorbox.org/embed/donate-to-the-daily-orange?default_interval=o&hide_donation_meter=true" name="donorbox" allowpaymentrequest="allowpaymentrequest" seamless="seamless" frameborder="0" scrolling="no" height="1000px" width="100%" style="max-width: 500px; min-width: 250px; max-height:none!important"></iframe>
+                <br/>
+                <a href = "#" id = "modal-close-button" onclick = "hideDonationModal()">X</a> 
+            </div>
+        </div>
+</body>
+</html>
